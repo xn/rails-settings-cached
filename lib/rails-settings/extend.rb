@@ -1,6 +1,6 @@
 module RailsSettings
   module Extend
-    extend ActiveSupport::Concern
+    extend ::ActiveSupport::Concern
 
     included do
       scope :with_settings, -> {

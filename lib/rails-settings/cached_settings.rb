@@ -9,14 +9,14 @@ module RailsSettings
     def expire_cache
       Rails.cache.delete("settings:#{self.var}")
     end
-    
+
     def self.[](var_name)
       cache_key = "settings:#{var_name}"
       obj = Rails.cache.read(cache_key)
       if obj == nil
         obj = super(var_name)
       end
-      
+
       return @@defaults[var_name.to_s] if obj == nil
       obj
     end

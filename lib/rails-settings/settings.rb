@@ -1,5 +1,5 @@
 module RailsSettings
-  class Settings < ActiveRecord::Base
+  class Settings < ::ActiveRecord::Base
 
     self.table_name = table_name_prefix + 'settings'
 
@@ -111,6 +111,6 @@ module RailsSettings
     def self.thing_scoped
       unscoped.where("thing_type is NULL and thing_id is NULL")
     end
-    
+
   end
 end
